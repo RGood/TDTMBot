@@ -14,3 +14,6 @@ prev_id.txt
 /.project
 /.pydevproject
 *.out
+
+# sensitive
+app_info.cfg
