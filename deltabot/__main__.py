@@ -62,7 +62,7 @@ def main():
 	reddit_client.set_oauth_app_info(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 	
 	#Print access-grant URL
-	print('Follow this URL to grant access: ' + r.get_authorize_url('DifferentUniqueKey',scope,True))
+	print('Follow this URL to grant access: ' + reddit_client.get_authorize_url('DifferentUniqueKey',scope,True))
 	
 	#Start server to receive callback
 	app.run(debug=False, port=65010)
