@@ -8,6 +8,7 @@ import flask
 import socket
 from threading import Thread
 #===============Startup Functions============
+app = Flask(__name__)
 
 #Get/set Config information
 Config = configparser.ConfigParser()
