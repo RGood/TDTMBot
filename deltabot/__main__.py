@@ -4,7 +4,7 @@ import config
 import os
 import praw
 import configparser
-import flask
+from flask import Flask, request
 import socket
 from threading import Thread
 #===============Startup Functions============
