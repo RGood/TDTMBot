@@ -40,7 +40,7 @@ def authorized():
 	global access_information
 	state = request.args.get('state', '')
 	code = request.args.get('code', '')
-	access_information = r.get_access_information(code)
+	access_information = reddit_client.get_access_information(code)
 	user = reddit_client.get_me()
 	text = 'Bot successfully started.'
 	kill()
@@ -50,7 +50,7 @@ def authorized():
 def refresh_access():
 	while(True):
 		time.sleep(1740)
-		r.refresh_access_information(access_information['refresh_token'])
+		reddit_client.refresh_access_information(access_information['refresh_token'])
 #============================================
 
 def sandbox():
