@@ -15,7 +15,12 @@ Config.read('app_info.cfg')
 REDIRECT_URI = 'http://'+socket.gethostbyname(socket.gethostname())+':65010/authorize_callback'
 CLIENT_ID = Config.get('Reddit Access','cid')
 CLIENT_SECRET = Config.get('Reddit Access','csec')
-access_information = None
+access_information = ''
+
+#########################################SCOPES#########################################
+scope = 'identity wikiedit wikiread edit flair modconfig modflair modposts privatemessages read submit'
+#SEE http://praw.readthedocs.org/en/latest/pages/oauth.html#oauth-scopes FOR DETAILS.
+########################################################################################
 
 #Function to kill webserver once access is granted
 def kill():
