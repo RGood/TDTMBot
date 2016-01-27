@@ -10,6 +10,7 @@ from threading import Thread
 #===============Startup Functions============
 app = Flask(__name__)
 
+conf = config.Config(os.getcwd() + '/config/config.json')
 reddit_client = praw.Reddit(conf.subreddit + ' bot', site_name=conf.site_name,api_request_delay=1)
 
 #Get/set Config information
@@ -57,8 +58,6 @@ def sandbox():
     bot = deltabot.DeltaBot()
 
 def main():
-	conf = config.Config(os.getcwd() + '/config/config.json')
-	
 	#Config client
 	reddit_client.set_oauth_app_info(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 	
