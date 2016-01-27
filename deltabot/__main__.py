@@ -10,7 +10,7 @@ from threading import Thread
 #===============Startup Functions============
 
 #Get/set Config information
-Config = ConfigParser.ConfigParser()
+Config = configparser.ConfigParser()
 Config.read('app_info.cfg')
 REDIRECT_URI = 'http://'+socket.gethostbyname(socket.gethostname())+':65010/authorize_callback'
 CLIENT_ID = Config.get('Reddit Access','cid')
