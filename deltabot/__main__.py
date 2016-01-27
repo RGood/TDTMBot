@@ -10,6 +10,8 @@ from threading import Thread
 #===============Startup Functions============
 app = Flask(__name__)
 
+reddit_client = praw.Reddit(conf.subreddit + ' bot', site_name=conf.site_name,api_request_delay=1)
+
 #Get/set Config information
 Config = configparser.ConfigParser()
 Config.read('app_info.cfg')
@@ -38,7 +40,7 @@ def authorized():
 	state = request.args.get('state', '')
 	code = request.args.get('code', '')
 	access_information = r.get_access_information(code)
-	user = r.get_me()
+	user = reddit_client.get_me()
 	text = 'Bot successfully started.'
 	kill()
 	return text
