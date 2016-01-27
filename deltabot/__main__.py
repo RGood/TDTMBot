@@ -13,8 +13,8 @@ from threading import Thread
 Config = configparser.ConfigParser()
 Config.read('app_info.cfg')
 REDIRECT_URI = 'http://'+socket.gethostbyname(socket.gethostname())+':65010/authorize_callback'
-CLIENT_ID = Config.get('Reddit Access','cid')
-CLIENT_SECRET = Config.get('Reddit Access','csec')
+CLIENT_ID = Config.get('Reddit App','cid')
+CLIENT_SECRET = Config.get('Reddit App','csec')
 access_information = ''
 
 #########################################SCOPES#########################################
