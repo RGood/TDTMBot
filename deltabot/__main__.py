@@ -65,7 +65,7 @@ def main():
 	print('Follow this URL to grant access: ' + reddit_client.get_authorize_url('DifferentUniqueKey',scope,True))
 	
 	#Start server to receive callback
-	app.run(debug=False, port=65010)
+	app.run(host="0.0.0.0", debug=False, port=65010)
 	
 	#Run thread to refresh access every 29 minutes (3 times in any given hour)
 	amt = Thread(target=refresh_access,args=())
